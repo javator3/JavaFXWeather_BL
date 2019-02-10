@@ -6,6 +6,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import pl.sda.JavaFXWeather.service.WeatherService;
 
 import java.net.URL;
@@ -25,10 +27,13 @@ public class rootController implements Initializable
     private TextField textfieldCity;
 
     @FXML
-    private Label labelTemp_C;
+    private Label labelTempC;
 
     @FXML
-    private Label labelTemp_feel;
+    private Label labelTempFeel;
+
+    @FXML
+    private ImageView weatherIcon;
 
 
     @Override
@@ -38,15 +43,21 @@ public class rootController implements Initializable
 
     }
 
+    public String getCity(){
+        return textfieldCity.getText().replace(" ", "+");
+    }
 
     public void setCity(ActionEvent actionEvent) {
-        labelTemp_C.setText(Float.toString(
+        labelTempC.setText(Float.toString(
                 weatherService.getRealTemp(
-                        textfieldCity.getText())));
+                       getCity())));
 
-        labelTemp_feel.setText(Float.toString(
+        labelTempFeel.setText(Float.toString(
                 weatherService.getFeelTemp(
-                        textfieldCity.getText())));
+                       getCity())));
+
+        Image image = new Image(weatherService.getWeatherIconURL(getCity()));
+        weatherIcon.setImage(image);
 
 
 

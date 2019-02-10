@@ -4,10 +4,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:controller="pl.sda.JavaFXWeather.rootController" prefHeight="253.0" prefWidth="376.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="253.0" prefWidth="376.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.sda.JavaFXWeather.rootController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="174.0" prefWidth="376.0" VBox.vgrow="ALWAYS">
       <children>
@@ -27,21 +28,22 @@
                   <Blend />
                </effect>
             </Label>
-            <Label fx:id="labelTemp_C" layoutX="218.0" layoutY="145.0" text="Label">
+            <Label fx:id="labelTempC" layoutX="218.0" layoutY="145.0" text="">
                <effect>
                   <Blend />
                </effect>
             </Label>
-            <Label fx:id="labelTemp_feel" layoutX="218.0" layoutY="186.0" text="Label">
+            <Label fx:id="labelTempFeel" layoutX="218.0" layoutY="186.0" text="">
                <effect>
                   <Blend />
                </effect>
             </Label>
-            <Button  onAction="#setCity" fx:id="buttonSearch" layoutX="268.0" layoutY="70.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0" text="Generuj">
+            <Button fx:id="buttonSearch" layoutX="268.0" layoutY="70.0" mnemonicParsing="false" onAction="#setCity" prefHeight="31.0" prefWidth="75.0" text="Generuj">
                <effect>
                   <Blend />
                </effect>
             </Button>
+            <ImageView fx:id="weatherIcon" fitHeight="61.0" fitWidth="75.0" layoutX="268.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" />
       </children>
     </AnchorPane>
   </children>

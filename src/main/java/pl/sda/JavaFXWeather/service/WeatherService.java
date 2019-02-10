@@ -33,6 +33,12 @@ public class WeatherService {
 
     }
 
+    public String getWeatherIconURL(String city){
+        weather = createObject(city);
+        String url = "https:" + weather.getCurrent().getCondition().getIcon();
+        return url;
+    }
+
     private Weather createObject(String city){
         finalURL = url + "?key=" + apiKey + "&q=" + city;
         URL jsonURL = null;
