@@ -40,7 +40,15 @@ public class rootController implements Initializable
 
 
     public void setCity(ActionEvent actionEvent) {
-        
+        labelTemp_C.setText(Float.toString(
+                weatherService.getRealTemp(
+                        textfieldCity.getText())));
+
+        labelTemp_feel.setText(Float.toString(
+                weatherService.getFeelTemp(
+                        textfieldCity.getText())));
+
+
 
     }
 }
